@@ -1,0 +1,32 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
+color white
+drawable ic_bg
+drawable ic_flag_of_argentina
+drawable ic_flag_of_australia
+drawable ic_flag_of_belgium
+drawable ic_flag_of_brazil
+drawable ic_flag_of_denmark
+drawable ic_flag_of_fiji
+drawable ic_flag_of_germany
+drawable ic_flag_of_india
+drawable ic_flag_of_kuwait
+drawable ic_flag_of_new_zealand
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id StartBtn
+id et_name
+layout activity_main
+layout activity_quiz_questions
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Theme.QuizApp
+xml backup_rules
+xml data_extraction_rules
