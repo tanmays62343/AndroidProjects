@@ -2,6 +2,10 @@ package com.TrX
 
 object Constants {
 
+    const val User_name : String  = "User_Name"
+    const val TotalQuestions : String = "total_question"
+    const val CorrectAnswers : String = "correct_answer"
+
     fun getQuestions(): ArrayList<Question> {
         val questionsList = ArrayList<Question>()
 
