@@ -37,17 +37,17 @@
         android:text="1"
         tools:ignore="UsingOnClickInXml" />
 
-    <Button
-        android:id="@+id/btn2"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:layout_margin="2dp"
-        android:onClick="OnDigit"
-        android:text="2"
-        tools:ignore="UsingOnClickInXml" />
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:onClick="OnDigit"
+            android:text="2"
+            tools:ignore="UsingOnClickInXml" />
 
-    <Button
+        <Button
         android:id="@+id/btn3"
         android:layout_width="0dp"
         android:layout_height="match_parent"
