@@ -75,6 +75,32 @@
 
     </FrameLayout>
 
+    <TextView
+        android:id="@+id/upcomingLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/FrestView"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/tvUpcomingExerciseName"
+        android:text="UPCOMING EXERCISE : "
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvUpcomingExerciseName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/upcomingLabel"
+        android:layout_marginTop="5dp"
+        android:textColor="#212121"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        tools:text="Exercise Name" />
+
     <ImageView
         android:id="@+id/TvImage"
         android:layout_width="match_parent"
@@ -109,7 +135,6 @@
         android:background="@drawable/item_circular_border"
         android:visibility="gone"
         tools:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/TvExerciseName">
@@ -146,7 +171,20 @@
 
         </LinearLayout>
 
-
     </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/exerciseStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/FexerciseProgressBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

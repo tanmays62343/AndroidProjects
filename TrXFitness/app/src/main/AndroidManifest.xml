@@ -18,6 +18,9 @@
         android:theme="@style/Theme.TrXFitness"
         tools:targetApi="31">
         <activity
+            android:name=".Finish_Activity"
+            android:exported="false" />
+        <activity
             android:name=".ExcerciseActivity"
             android:exported="false" />
         <activity
