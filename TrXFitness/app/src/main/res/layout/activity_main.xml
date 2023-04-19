@@ -21,7 +21,8 @@
 
     <FrameLayout
         android:id="@+id/Fstart"
-        app:layout_constraintTop_toBottomOf="@id/Img"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="150dp"
@@ -37,10 +38,43 @@
             android:textSize="22sp"
             android:textStyle="bold">
         </TextView>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/FBMI"
+        app:layout_constraintTop_toBottomOf="@id/Fstart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/item_accent_background">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BMI"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold">
+        </TextView>
 
     </FrameLayout>
 
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Calculator"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/Default_Button_textSize"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/FBMI"
+        >
+    </TextView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

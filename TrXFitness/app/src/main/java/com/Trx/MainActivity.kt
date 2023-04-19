@@ -23,6 +23,10 @@ class MainActivity : AppCompatActivity() {
             var intent = Intent(this, ExcerciseActivity::class.java)
             startActivity(intent)
         }
+        binding?.FBMI?.setOnClickListener {
+            var intent = Intent(this, BMI_Activity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onDestroy() {
