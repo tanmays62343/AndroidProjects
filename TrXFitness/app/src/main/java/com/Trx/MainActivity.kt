@@ -27,6 +27,10 @@ class MainActivity : AppCompatActivity() {
             var intent = Intent(this, BMI_Activity::class.java)
             startActivity(intent)
         }
+        binding?.FHistory?.setOnClickListener {
+            var intent = Intent(this, HistoryActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onDestroy() {

@@ -40,12 +40,13 @@
         </TextView>
     </FrameLayout>
 
+
     <FrameLayout
         android:id="@+id/FBMI"
         app:layout_constraintTop_toBottomOf="@id/Fstart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/FHistory"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:background="@drawable/item_accent_background">
@@ -70,9 +71,44 @@
         android:textColor="@color/colorAccent"
         android:textSize="@dimen/Default_Button_textSize"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/FHistory"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/FBMI"
+        >
+    </TextView>
+
+    <FrameLayout
+        android:id="@+id/FHistory"
+        app:layout_constraintTop_toBottomOf="@id/Fstart"
+        app:layout_constraintStart_toEndOf="@id/FBMI"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_gravity="center"
+        android:gravity ="center"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/item_accent_background">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src = "@drawable/ic_calendar"
+            android:layout_gravity="center">
+        </ImageView>
+
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="History"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/Default_Button_textSize"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/FHistory"
+        app:layout_constraintStart_toStartOf="@id/FHistory"
+        app:layout_constraintTop_toBottomOf="@id/FHistory"
         >
     </TextView>
 

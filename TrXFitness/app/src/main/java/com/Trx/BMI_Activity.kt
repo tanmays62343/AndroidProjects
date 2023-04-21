@@ -16,46 +16,31 @@ class BMI_Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityBmiBinding.inflate(layoutInflater)
         setContentView(binding?.root)
+
         setSupportActionBar(binding?.toolbarBMI)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true) //set back button
-        supportActionBar?.title = "CALCULATE BMI" // Setting a title in the action bar.
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "CALCULATE BMI"
         binding?.toolbarBMI?.setNavigationOnClickListener {
             onBackPressedDispatcher.onBackPressed()
         }
-        // END
 
-        // TODO(Step 3 : Adding a click event to METRIC UNIT Calculate button and after valid input calculating it.)
-        // START
-        // Button will calculate the input values in Metric Units
         binding?.btnCalculateUnits?.setOnClickListener {
-
             // The values are validated.
             if (validateMetricUnits()) {
-
                 // The height value is converted to a float value and divided by 100 to convert it to meter.
                 val heightValue: Float = binding?.EtMetricHeight?.text.toString().toFloat() / 100
-
                 // The weight value is converted to a float value
                 val weightValue: Float = binding?.EtMetricWeight?.text.toString().toFloat()
-
                 // BMI value is calculated in METRIC UNITS using the height and weight value.
                 val bmi = weightValue / (heightValue * heightValue)
-
                 displayBMIResult(bmi)
             } else {
                 Toast.makeText(this@BMI_Activity, "Please enter valid values.", Toast.LENGTH_SHORT)
                     .show()
             }
         }
-        // END
     }
 
-
-    // TODO(Step 2 : Validating the METRIC UNITS CALCULATION input.)
-    // START
-    /**
-     * Function is used to validate the input values for METRIC UNITS.
-     */
     private fun validateMetricUnits(): Boolean {
         var isValid = true
 
@@ -64,16 +49,8 @@ class BMI_Activity : AppCompatActivity() {
         } else if (binding?.EtMetricHeight?.text.toString().isEmpty()) {
             isValid = false
         }
-
         return isValid
     }
-    // END
-
-    //TODO(Step 4 : Displaying the calculated BMI UI what we have designed earlier.)
-    // START
-    /**
-     * Function is used to display the result of METRIC UNITS.
-     */
     private fun displayBMIResult(bmi: Float) {
 
         val bmiLabel: String
