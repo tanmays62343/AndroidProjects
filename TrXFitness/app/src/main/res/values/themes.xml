@@ -12,8 +12,9 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="android:windowFullscreen">true</item>
     </style>
-    <style name="ToolBarTheme" parent="@style/ThemeOverlay.MaterialComponents.ActionBar">
+    <style name="ToolBarTheme" parent="@style/Theme.MaterialComponents.NoActionBar.Bridge">
         <item name="colorControlNormal">@color/toolbar_color</item>
     </style>
 </resources>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ECDFF6"
     tools:context=".ExcerciseActivity">
     
     <androidx.appcompat.widget.Toolbar
@@ -12,7 +13,7 @@
         android:layout_width="match_parent"
         android:theme="@style/ToolBarTheme"
         android:layout_height="?android:attr/actionBarSize"
-        android:background="@color/white"
+        android:background="#ECDFF6"
         app:titleTextColor="@color/colorPrimary"
         />
 
@@ -105,6 +106,7 @@
         android:id="@+id/TvImage"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:padding="50dp"
         android:scaleType="fitXY"
         android:src="@drawable/ic_jumping_jacks"
         android:visibility="invisible"

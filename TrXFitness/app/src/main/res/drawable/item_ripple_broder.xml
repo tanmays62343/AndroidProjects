@@ -7,7 +7,6 @@
             <solid android:color="@color/white"> </solid>
         </shape>
     </item>
-
     <item android:drawable="@drawable/item_circular_border"> </item>
 
 </ripple>

@@ -42,15 +42,15 @@ class ExcerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         super.onCreate(savedInstanceState)
         binding = ActivityExcerciseBinding.inflate(layoutInflater)
         setContentView(binding?.root)
-        setSupportActionBar(binding?.toolbar)
 
+        setSupportActionBar(binding?.toolbar)
         if(supportActionBar != null){
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }
-
         binding?.toolbar?.setNavigationOnClickListener{
             customBackDialog()
         }
+
         exerciseList = Constants.defaultExerciseList()
         setRestView()
         tts = TextToSpeech(this, this)

@@ -36,7 +36,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:contentDescription="Finish Image"
-            android:src="@drawable/ic_action_done" />
+            android:src="@drawable/m_action_done" />
     </LinearLayout>
 
     <TextView

@@ -23,7 +23,7 @@ object Constants {
 
         val pushUp = ExerciseModel(3,
             "Push Up",
-            R.drawable.ic_push_up,
+            R.drawable.ic_pushups,
             false,
             false
         )
@@ -32,7 +32,7 @@ object Constants {
         val abdominalCrunch =
             ExerciseModel(4,
                 "Abdominal Crunch",
-                R.drawable.ic_abdominal_crunch,
+                R.drawable.ic_crunches,
                 false,
                 false
             )
@@ -42,7 +42,7 @@ object Constants {
             ExerciseModel(
                 5,
                 "Step-Up onto Chair",
-                R.drawable.ic_step_up_onto_chair,
+                R.drawable.ic_stepup_onchair,
                 false,
                 false
             )
@@ -50,7 +50,7 @@ object Constants {
 
         val squat = ExerciseModel(6,
             "Squat",
-            R.drawable.ic_squat,
+            R.drawable.ic_squats,
             false,
             false
         )
@@ -60,7 +60,7 @@ object Constants {
             ExerciseModel(
                 7,
                 "Tricep Dip On Chair",
-                R.drawable.ic_triceps_dip_on_chair,
+                R.drawable.ic_triceps_dip,
                 false,
                 false
             )
@@ -77,7 +77,7 @@ object Constants {
         val highKneesRunningInPlace =
             ExerciseModel(
                 9, "High Knees Running In Place",
-                R.drawable.ic_high_knees_running_in_place,
+                R.drawable.ic_high_knees,
                 false,
                 false
             )
@@ -85,7 +85,7 @@ object Constants {
 
         val lunges = ExerciseModel(10,
             "Lunges",
-            R.drawable.ic_lunge,
+            R.drawable.ic_lunges,
             false,
             false
         )
@@ -95,7 +95,7 @@ object Constants {
             ExerciseModel(
                 11,
                 "Push up and Rotation",
-                R.drawable.ic_push_up_and_rotation,
+                R.drawable.ic_pushup_and_rotation,
                 false,
                 false
             )

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/main_Screen_Layout_Padding"
+    android:background="#ECDFF6"
     tools:context=".MainActivity">
 
     <ImageView
@@ -13,8 +14,9 @@
         app:layout_constraintBottom_toTopOf="@+id/Fstart"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
-        android:contentDescription="Start Image"
-        android:src="@drawable/img_main_page"
+        android:padding="65dp"
+        android:contentDescription="App Logo"
+        android:src="@drawable/m_app_logo"
         android:layout_width="wrap_content"
         android:layout_height="250dp">
     </ImageView>
@@ -33,8 +35,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="START"
+            android:fontFamily="sans-serif-black"
             android:layout_gravity="center"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/colorAccent"
             android:textSize="22sp"
             android:textStyle="bold">
         </TextView>
@@ -49,7 +52,7 @@
         app:layout_constraintEnd_toStartOf="@id/FHistory"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:background="@drawable/item_accent_background">
+        android:background="@drawable/app_accent_gradient">
 
         <TextView
             android:layout_width="wrap_content"
@@ -68,7 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="Calculator"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimary"
         android:textSize="@dimen/Default_Button_textSize"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@id/FHistory"
@@ -87,12 +90,12 @@
         android:gravity ="center"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:background="@drawable/item_accent_background">
+        android:background="@drawable/app_accent_gradient">
 
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src = "@drawable/ic_calendar"
+            android:src = "@drawable/m_calendar"
             android:layout_gravity="center">
         </ImageView>
 
@@ -103,7 +106,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="History"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimary"
         android:textSize="@dimen/Default_Button_textSize"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@id/FHistory"

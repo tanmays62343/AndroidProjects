@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.widget.FrameLayout
 import android.widget.Toast
 import com.Trx.databinding.ActivityMainBinding
-
 class MainActivity : AppCompatActivity() {
 
     private var binding : ActivityMainBinding? = null
