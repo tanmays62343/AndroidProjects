@@ -17,8 +17,7 @@ class ExerciseStatusAdapter (val items : ArrayList<ExerciseModel>):
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(ItemExerciseStatusBinding.inflate(
-            LayoutInflater.from(parent.context),parent,false))
+        return ViewHolder(ItemExerciseStatusBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
 
     override fun getItemCount(): Int {
