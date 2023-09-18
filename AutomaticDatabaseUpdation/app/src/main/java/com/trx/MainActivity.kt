@@ -1,5 +1,6 @@
 package com.trx
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.LiveData
@@ -57,6 +58,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        @SuppressLint("SimpleDateFormat")
         suspend fun getData(){
             val sdf = SimpleDateFormat("dd/MM/yyyy  - hh:mm:ss")
             val currentTime = sdf.format(Date())
