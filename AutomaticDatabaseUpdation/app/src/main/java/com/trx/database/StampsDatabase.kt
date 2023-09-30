@@ -1,4 +1,4 @@
-package com.trx
+package com.trx.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
