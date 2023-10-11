@@ -1,13 +1,14 @@
-package com.Trx
+package com.Trx.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.Trx.adapters.HistoryAdapter
+import com.Trx.database.HistoryDao
+import com.Trx.database.WorkoutApp
 import com.Trx.databinding.ActivityHistoryBinding
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class HistoryActivity : AppCompatActivity() {

@@ -1,9 +1,12 @@
-package com.Trx
+package com.Trx.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.lifecycleScope
+import com.Trx.database.HistoryDao
+import com.Trx.database.HistoryEntity
+import com.Trx.database.WorkoutApp
 import com.Trx.databinding.ActivityFinishBinding
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat

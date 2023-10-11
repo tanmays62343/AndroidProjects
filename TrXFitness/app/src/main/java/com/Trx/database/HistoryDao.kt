@@ -1,4 +1,4 @@
-package com.Trx
+package com.Trx.database
 
 import androidx.room.Dao
 import androidx.room.Insert

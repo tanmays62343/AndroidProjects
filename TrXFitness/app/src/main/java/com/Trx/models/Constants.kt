@@ -1,4 +1,6 @@
-package com.Trx
+package com.Trx.models
+
+import com.Trx.R
 
 object Constants {
 

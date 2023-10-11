@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="@dimen/main_Screen_Layout_Padding"
     android:background="#ECDFF6"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
     <ImageView
         android:id="@+id/Img"

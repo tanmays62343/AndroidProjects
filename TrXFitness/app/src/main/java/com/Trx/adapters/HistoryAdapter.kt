@@ -1,4 +1,4 @@
-package com.Trx
+package com.Trx.adapters
 
 import android.graphics.Color
 import android.view.LayoutInflater

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ECDFF6"
-    tools:context=".ExcerciseActivity">
+    tools:context=".activities.ExcerciseActivity">
     
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

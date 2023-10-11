@@ -10,9 +10,11 @@ import com.trx.database.StampsEntity
 interface StampsDao {
 
     @Insert
-    suspend fun insertStamp(stampsEntity : StampsEntity)
+    fun insertStamp(stampsEntity: StampsEntity)
 
     @Query("SELECT * FROM `Stamps-Entry`")
-    fun getStamps() : LiveData<List<StampsEntity>>
+    fun getStamps(): LiveData<List<StampsEntity>>
 
+    /*@Query("SELECT * FROM `Stamps-Entry` LIMIT 1")
+    fun getFirstItem() : StampsEntity*/
 }

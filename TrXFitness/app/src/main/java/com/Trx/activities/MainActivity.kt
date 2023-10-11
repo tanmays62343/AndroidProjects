@@ -1,9 +1,8 @@
-package com.Trx
+package com.Trx.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.FrameLayout
 import android.widget.Toast
 import com.Trx.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.Trx
+package com.Trx.activities
 
 import android.app.Dialog
 import android.content.Intent
@@ -10,8 +10,11 @@ import android.os.CountDownTimer
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.Trx.models.Constants
+import com.Trx.models.ExerciseModel
+import com.Trx.adapters.ExerciseStatusAdapter
+import com.Trx.R
 import com.Trx.databinding.ActivityExcerciseBinding
 import com.Trx.databinding.CustomBackDialogBinding
 import java.util.*
@@ -83,7 +86,8 @@ class ExcerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         try{
             val sound = Uri.parse("android.resource://com.Trx/"+
-                    R.raw.app_src_main_res_raw_press_start)
+                    R.raw.app_src_main_res_raw_press_start
+            )
             player = MediaPlayer.create(applicationContext,sound)
             player?.isLooping = false
             player?.start()
@@ -164,7 +168,7 @@ class ExcerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                     setRestView()
                 }else{
                     finish()
-                    val intent = Intent(this@ExcerciseActivity,Finish_Activity::class.java)
+                    val intent = Intent(this@ExcerciseActivity, Finish_Activity::class.java)
                     startActivity(intent)
                 }
             }

@@ -10,7 +10,7 @@
 
     <application
         android:allowBackup="true"
-        android:name=".WorkoutApp"
+        android:name=".database.WorkoutApp"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/m_app_logo"
@@ -19,19 +19,19 @@
         android:theme="@style/Theme.TrXFitness"
         tools:targetApi="31">
         <activity
-            android:name=".HistoryActivity"
+            android:name=".activities.HistoryActivity"
             android:exported="false" />
         <activity
-            android:name=".BMI_Activity"
+            android:name=".activities.BMI_Activity"
             android:exported="false" />
         <activity
-            android:name=".Finish_Activity"
+            android:name=".activities.Finish_Activity"
             android:exported="false" />
         <activity
-            android:name=".ExcerciseActivity"
+            android:name=".activities.ExcerciseActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

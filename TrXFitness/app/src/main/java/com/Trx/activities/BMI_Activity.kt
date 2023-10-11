@@ -1,4 +1,4 @@
-package com.Trx
+package com.Trx.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

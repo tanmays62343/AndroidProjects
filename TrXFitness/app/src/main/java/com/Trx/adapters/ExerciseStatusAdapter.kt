@@ -1,11 +1,12 @@
-package com.Trx
+package com.Trx.adapters
 
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.Trx.databinding.ActivityExcerciseBinding
+import com.Trx.models.ExerciseModel
+import com.Trx.R
 import com.Trx.databinding.ItemExerciseStatusBinding
 
 class ExerciseStatusAdapter (val items : ArrayList<ExerciseModel>):
@@ -32,19 +33,22 @@ class ExerciseStatusAdapter (val items : ArrayList<ExerciseModel>):
             model.getIsSelected() ->{
                 holder.item.background =
                     ContextCompat.getDrawable(
-                        holder.itemView.context,R.drawable.item_circular_background_thin)
+                        holder.itemView.context, R.drawable.item_circular_background_thin
+                    )
                 holder.item.setTextColor(Color.parseColor("#212121"))
             }
             model.getIsCompleted() ->{
                 holder.item.background =
                     ContextCompat.getDrawable(
-                        holder.itemView.context,R.drawable.item_accent_background)
+                        holder.itemView.context, R.drawable.item_accent_background
+                    )
                 holder.item.setTextColor(Color.parseColor("#FFFFFF"))
             }
             else ->{
                 holder.item.background =
                     ContextCompat.getDrawable(
-                        holder.itemView.context,R.drawable.item_circular_background_gray)
+                        holder.itemView.context, R.drawable.item_circular_background_gray
+                    )
                 holder.item.setTextColor(Color.parseColor("#212121"))
             }
         }

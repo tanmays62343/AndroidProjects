@@ -1,4 +1,4 @@
-package com.Trx
+package com.Trx.models
 
 class ExerciseModel (
     private var id:Int,
