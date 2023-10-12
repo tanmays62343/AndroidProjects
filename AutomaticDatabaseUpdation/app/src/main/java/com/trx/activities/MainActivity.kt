@@ -1,6 +1,10 @@
 package com.trx.activities
 
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
@@ -41,11 +45,15 @@ class MainActivity : AppCompatActivity() {
         ).build()
 
         //MyWorker.enqueue()
+        createNotificationChannel()
 
-        val initialRequest = OneTimeWorkRequest.Builder(MyWorker::class.java)
+        val serviceIntent = Intent(this, StampsService::class.java)
+        startService(serviceIntent)
+
+        /*val initialRequest = OneTimeWorkRequest.Builder(MyWorker::class.java)
             .setInitialDelay(10, TimeUnit.SECONDS)
             .build()
-        WorkManager.getInstance(applicationContext).enqueue(initialRequest)
+        WorkManager.getInstance(applicationContext).enqueue(initialRequest)*/
 
         updateRecyclerView()
         //callJob()
@@ -58,6 +66,16 @@ class MainActivity : AppCompatActivity() {
             if (!it.isNullOrEmpty()) {
                 binding?.StampList?.adapter = RecyclerAdapters(it)
             }
+        }
+    }
+
+    private fun createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channelId = "roomDemo_notification_channel"
+            val channelName = "roomDemo_notification"
+            val notificationManager = getSystemService(NotificationManager::class.java)
+            val channel = NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_LOW)
+            notificationManager.createNotificationChannel(channel)
         }
     }
 

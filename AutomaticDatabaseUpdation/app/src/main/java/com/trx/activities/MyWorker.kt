@@ -21,7 +21,7 @@ class MyWorker(appContext: Context, workerParams: WorkerParameters) :
     // This method is executed on a background thread, Your background work goes here
     @SuppressLint("SimpleDateFormat")
     override fun doWork(): Result {
-        try {
+        /*try {
             //Updating the Database
             val sdf = SimpleDateFormat("dd/MM/yyyy  - hh:mm:ss")
             val currentTime = sdf.format(Date())
@@ -35,7 +35,7 @@ class MyWorker(appContext: Context, workerParams: WorkerParameters) :
 
         } catch (e: Exception) {
             return Result.failure()
-        }
+        }*/
         return Result.success()
     }
 
