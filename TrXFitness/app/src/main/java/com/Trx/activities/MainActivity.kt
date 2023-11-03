@@ -18,15 +18,15 @@ class MainActivity : AppCompatActivity() {
 
         binding?.Fstart?.setOnClickListener() {
             Toast.makeText(this, "Let's Go", Toast.LENGTH_LONG).show()
-            var intent = Intent(this, ExcerciseActivity::class.java)
+            val intent = Intent(this, ExcerciseActivity::class.java)
             startActivity(intent)
         }
         binding?.FBMI?.setOnClickListener {
-            var intent = Intent(this, BMI_Activity::class.java)
+            val intent = Intent(this, BMI_Activity::class.java)
             startActivity(intent)
         }
         binding?.FHistory?.setOnClickListener {
-            var intent = Intent(this, HistoryActivity::class.java)
+            val intent = Intent(this, HistoryActivity::class.java)
             startActivity(intent)
         }
     }
