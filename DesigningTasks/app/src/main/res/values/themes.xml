@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.DesigningTasks" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">#0082DA</item>
+    </style>
+
+    <style name="Theme.DesigningTasks" parent="Base.Theme.DesigningTasks" />
+
+    <!--for rounded image View-->
+    <style name="roundedImageViewRounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+
+
+</resources>
