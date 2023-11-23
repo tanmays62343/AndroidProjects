@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.trx.models.Article" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/news_image"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            tools:src="@mipmap/ic_launcher"
+            android:contentDescription="@string/news_image" />
+
+        <TextView
+            android:id="@+id/news_headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:text="@{model.title}"
+            android:maxLines="2"
+            android:ems="10"
+            tools:text="Title" />
+
+        <TextView
+            android:id="@+id/news_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{model.description}"
+            tools:text="Description"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:maxLines="4" />
+
+    </LinearLayout>
+
+</layout>
