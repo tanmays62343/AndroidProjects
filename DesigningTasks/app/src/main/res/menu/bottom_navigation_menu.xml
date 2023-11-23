@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/ic_home"
+        android:checked="true"
+        />
+
+    <item
+        android:id="@+id/Events"
+        android:title="Events"
+        android:icon="@drawable/ic_skate"
+        />
+
+    <item
+        android:id="@+id/Market"
+        android:title="Market"
+        android:icon="@drawable/ic_basket"
+        />
+
+</menu>
