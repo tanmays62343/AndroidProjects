@@ -21,9 +21,14 @@ import com.trx.viewModels.HeadLinesViewModelFactory
 class HeadLinesFragment : Fragment() {
 
     private lateinit var binding : FragmentHeadLinesBinding
+
+    //Initializing ViewModel
     private lateinit var headLinesViewModel : HeadLinesViewModel
+
+    //Initializing Adapter for our Recycler view
     private lateinit var adapter: NewsAdapter
 
+    //We are in Fragment so this will execute Before the View is created (Refer CheezyCode Vid)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -33,16 +38,19 @@ class HeadLinesFragment : Fragment() {
         return binding.root
     }
 
-
+    //This will be executed after the view is created
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //creating Every instances which we will need
         val newsService = NewsService.newsInstance
         val repository = NewsRepository(newsService)
 
+        //Start looking what we need from here
         headLinesViewModel = ViewModelProvider(this,
             HeadLinesViewModelFactory(repository))[HeadLinesViewModel::class.java]
 
+        //Getting the Data From our ViewModel Which it is Bringing form Repository
         headLinesViewModel.newsHeadlines.observe(requireActivity(), Observer {
             Log.d("BRB",it.toString())
             adapter = NewsAdapter(requireContext(),it.articles)

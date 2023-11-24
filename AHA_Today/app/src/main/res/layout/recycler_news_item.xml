@@ -11,11 +11,19 @@
 
     </data>
 
-    <LinearLayout
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:elevation="8dp"
+        android:layout_margin="8dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            >
 
         <ImageView
             android:id="@+id/news_image"
@@ -31,8 +39,10 @@
             android:layout_marginTop="8dp"
             style="@style/TextAppearance.AppCompat.Headline"
             android:text="@{model.title}"
+            android:gravity="center"
             android:maxLines="2"
             android:ems="10"
+            android:ellipsize="end"
             tools:text="Title" />
 
         <TextView
@@ -41,10 +51,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@{model.description}"
+            android:gravity="center"
             tools:text="Description"
+            android:ellipsize="end"
             style="@style/TextAppearance.AppCompat.Body1"
             android:maxLines="4" />
 
-    </LinearLayout>
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
 </layout>
