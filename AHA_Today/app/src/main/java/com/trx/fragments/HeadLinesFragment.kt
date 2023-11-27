@@ -54,7 +54,7 @@ class HeadLinesFragment : Fragment() {
         headLinesViewModel.newsHeadlines.observe(requireActivity(), Observer {
             Log.d("BRB",it.toString())
             adapter = NewsAdapter(requireContext(),it.articles)
-            binding.headlineRecycler.adapter = adapter
+            binding.headlineViewPager.adapter = adapter
         })
 
     }

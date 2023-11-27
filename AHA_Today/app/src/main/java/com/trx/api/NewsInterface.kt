@@ -1,10 +1,8 @@
 package com.trx.api
 
 import com.trx.models.News
-import retrofit2.Call
+import retrofit2.Call       //This import is for call return type (Not in use)
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 

@@ -3,19 +3,11 @@ package com.trx.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Toast
-import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.fragment.app.Fragment
 import com.trx.R
-import com.trx.api.NewsService
 import com.trx.databinding.ActivityMainBinding
-import com.trx.databinding.FragmentHeadLinesBinding
 import com.trx.fragments.HeadLinesFragment
-import com.trx.models.News
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 //Our File Follows A Proper MVVM Architecture
 class MainActivity : AppCompatActivity() {
