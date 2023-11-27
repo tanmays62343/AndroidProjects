@@ -17,6 +17,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+//Our File Follows A Proper MVVM Architecture
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
