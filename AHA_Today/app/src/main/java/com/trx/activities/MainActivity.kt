@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.trx.R
 import com.trx.databinding.ActivityMainBinding
+import com.trx.fragments.AllNewsFragment
 import com.trx.fragments.HeadLinesFragment
 
 //Our File Follows A Proper MVVM Architecture
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     //Initializing Fragments
     private val headlinesFragment = HeadLinesFragment()
+    private val allNewsFragment = AllNewsFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,10 +45,7 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.all_news -> {
                     //TODO :(Create an all news Fragment : note - sir told not to do Bogus parameter)
-                    Toast.makeText(
-                        this, "Hello",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    setupFragment(allNewsFragment)
                     true
                 }
 

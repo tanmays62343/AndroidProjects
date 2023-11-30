@@ -27,8 +27,7 @@ class MainActivity : AppCompatActivity() {
 
     private var binding: ActivityMainBinding? = null
     private var allTime: LiveData<List<StampsEntity>>? = null
-    //private val scope= MainScope()
-    //private var job: Job?=null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,28 +78,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
-    /*private fun callJob(){
-        stopUpdate()
-        job=scope.launch {
-            while (true){
-                getData()
-                delay(600000)
-            }
-        }
-    }*/
-
-    /*@SuppressLint("SimpleDateFormat")
-    fun putData(){
-        val sdf = SimpleDateFormat("dd/MM/yyyy  - hh:mm:ss")
-        val currentTime = sdf.format(Date())
-        database.connectStamps().insertStamp(StampsEntity(0, currentTime))
-
-        updateRecyclerView()
-    }*/
-
-    /*private fun stopUpdate(){
-        job?.cancel()
-        job=null
-    }*/
 }
