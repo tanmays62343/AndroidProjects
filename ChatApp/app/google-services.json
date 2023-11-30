@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "698845853010",
+    "project_id": "chatapp-8dfe1",
+    "storage_bucket": "chatapp-8dfe1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698845853010:android:4ef650fb4757d6da07368b",
+        "android_client_info": {
+          "package_name": "com.trx"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACixZ4wsyma34yyRQvklNkQvRr9vPz3R0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

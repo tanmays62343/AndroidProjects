@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">ChatApp</string>
+    <string name="stay_connected">Stay Connected</string>
+    <string name="enter_your_email_address_and_password_n_to_get_access_to_your_account">Enter your email address and password \n to get access to your account</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="signup">Signup</string>
+    <string name="already_have_an_account_login">Already have an account. login?</string>
+    <string name="dont_t_have_an_account_sign_up">Dont\'t have an account. Sign up?</string>
+    <string name="login">Login</string>
+    <string name="please_login_to_continue">Please login to continue</string>
+    <string name="login_now">Login Now</string>
 </resources>
