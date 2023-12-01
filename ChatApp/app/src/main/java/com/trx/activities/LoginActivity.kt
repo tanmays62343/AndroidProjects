@@ -21,8 +21,24 @@ class LoginActivity : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
 
+        val currentUser = firebaseAuth.currentUser
+
+        //If the User Exists and is verified it will redirect it to main activity
+        if(currentUser != null && currentUser.isEmailVerified){
+            Intent(this,MainActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+
         binding.loginButton.setOnClickListener {
             login()
+        }
+
+        binding.tvSignup.setOnClickListener {
+            Intent(this,SignupActivity::class.java).also {
+                startActivity(it)
+            }
+            finish()
         }
 
     }

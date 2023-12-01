@@ -33,6 +33,13 @@ class SignupActivity : AppCompatActivity() {
             signUpUser()
         }
 
+        binding.tvLogin.setOnClickListener {
+            Intent(this,LoginActivity::class.java).also {
+                startActivity(it)
+            }
+            finish()
+        }
+
     }
 
     //creating a user using firebase
@@ -41,8 +48,6 @@ class SignupActivity : AppCompatActivity() {
         val email = binding.etSemail.text.toString()
         val password = binding.etSpassword.text.toString()
         val confirmPassword = binding.etCnfrmPass.text.toString()
-
-        val mUser = User(name, email)
 
         //General ID and Password Authentication
         if (email.isBlank() || password.isBlank()
@@ -67,8 +72,9 @@ class SignupActivity : AppCompatActivity() {
             .addOnCompleteListener(this) {
                 if (it.isSuccessful) {
                     val user = firebaseAuth.currentUser
-                    user?.sendEmailVerification()
-                        ?.addOnCompleteListener { emailTask ->
+                    val mUser = User(name,email,user!!.uid)
+                    user.sendEmailVerification()
+                        .addOnCompleteListener { emailTask ->
                             if (emailTask.isSuccessful) {
                                 Toast.makeText(
                                     this, "Verification email sent",
@@ -81,19 +87,21 @@ class SignupActivity : AppCompatActivity() {
                                 binding.etSpassword.text?.clear()
                                 binding.etCnfrmPass.text?.clear()
                                 binding.etSname.text?.clear()
-                                //firebaseAuth.signOut()  Doubt in This
                                 startActivity(Intent(this, LoginActivity::class.java))
-
+                                finish()
+                                //firebaseAuth.signOut()
                             } else {
                                 Toast.makeText(
-                                    this, "Failed to sent Verification email",
+                                    this,
+                                    "Failed to sent Verification email, Check Your Email ID",
                                     Toast.LENGTH_LONG
                                 ).show()
                             }
                         }
                 } else {
                     Toast.makeText(
-                        this, "Error Creating User",
+                        this,
+                        "Error Creating User, Email Already Exist",
                         Toast.LENGTH_LONG
                     ).show()
                 }
