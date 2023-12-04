@@ -13,4 +13,9 @@
     <string name="please_login_to_continue">Please login to continue</string>
     <string name="login_now">Login Now</string>
     <string name="add_a_chat">Add a Chat</string>
+    <string name="send">Send</string>
+    <string name="message">Message</string>
+    <string name="logout">Logout</string>
+    <string name="back">Back</string>
+    <string name="option">Option</string>
 </resources>
