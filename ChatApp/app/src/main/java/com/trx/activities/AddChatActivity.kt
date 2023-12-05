@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.trx.R
 import com.trx.adapters.AddChatAdapter
@@ -15,7 +16,7 @@ class AddChatActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityAddChatBinding
     private lateinit var firestore: FirebaseFirestore
-
+    private lateinit var firebaseAuth: FirebaseAuth
 
     private var usersList = mutableListOf<User>()
 
@@ -25,6 +26,7 @@ class AddChatActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         firestore = FirebaseFirestore.getInstance()
+        firebaseAuth = FirebaseAuth.getInstance()
 
         usersList.clear()
         firestore.collection(USERS_COLLECTION)
@@ -36,7 +38,16 @@ class AddChatActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT).show()
                     return@addSnapshotListener
                 }
-                usersList.addAll(value.toObjects(User::class.java))
+
+                //usersList.addAll(value.toObjects(User::class.java)) if we have to add all
+
+                for(doc in value.documents){
+                    val cUser = doc.toObject(User::class.java)
+                    if(cUser != null && cUser.uniqueID != firebaseAuth.currentUser!!.uid){
+                        usersList.add(cUser)
+                    }
+                }
+
                 val adapter = AddChatAdapter(this,usersList)
                 binding.recyclerNames.adapter = adapter
             }
