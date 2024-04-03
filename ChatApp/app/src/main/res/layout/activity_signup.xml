@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:gravity="center_vertical"
+        android:gravity="center"
         android:orientation="vertical"
         android:padding="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,11 +32,29 @@
             android:fontFamily="sans-serif"
             android:text="@string/enter_your_email_address_and_password_n_to_get_access_to_your_account" />
 
+        <ImageView
+            android:id="@+id/profile_Pic"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:padding="10dp"
+            android:src="@drawable/ic_profile"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_profile"
+            />
+        <Button
+            android:id="@+id/upload_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/upload_image"
+            />
+
         <EditText
             android:id="@+id/et_Sname"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="20dp"
             android:ems="10"
             android:hint="@string/full_name"
             android:inputType="textPersonName"

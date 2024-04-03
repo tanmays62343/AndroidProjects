@@ -18,4 +18,5 @@
     <string name="logout">Logout</string>
     <string name="back">Back</string>
     <string name="option">Option</string>
+    <string name="upload_image">Upload Image</string>
 </resources>
