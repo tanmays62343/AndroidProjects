@@ -122,6 +122,7 @@ class CameraFragment : Fragment(), ObjectDetectorHelper.DetectorListener {
                 .setTargetRotation(binding!!.viewFinder.display.rotation)
                 .build()
 
+        Log.d("SCREEN WIDTH", binding!!.viewFinder.width.toString())
         // ImageAnalysis. Using RGBA 8888 to match how our models work
         imageAnalyzer =
             ImageAnalysis.Builder()

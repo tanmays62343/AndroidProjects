@@ -4,9 +4,11 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
+import android.graphics.Path
 import android.graphics.Rect
 import android.graphics.RectF
 import android.util.AttributeSet
+import android.util.Log
 import android.view.View
 import androidx.core.content.ContextCompat
 import com.trx.R
@@ -38,7 +40,7 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
     }
 
     private fun initPaints() {
-        textBackgroundPaint.color = Color.BLACK
+        textBackgroundPaint.color = Color.RED
         textBackgroundPaint.style = Paint.Style.FILL
         textBackgroundPaint.textSize = 50f
 
@@ -54,7 +56,7 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
     override fun draw(canvas: Canvas) {
         super.draw(canvas)
 
-        for (result in results) {
+        results.forEachIndexed { index, result ->
             val boundingBox = result.boundingBox
 
             val top = boundingBox.top * scaleFactor
@@ -64,27 +66,17 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
 
             // Draw bounding box around detected objects
             val drawableRect = RectF(left, top, right, bottom)
-            canvas.drawRect(drawableRect, boxPaint)
+            //canvas.drawRect(drawableRect, boxPaint)
 
-            // Create text to display alongside detected objects
-            val drawableText =
-                result.categories[0].label + " " +
-                        String.format("%.2f", result.categories[0].score)
-
-            // Draw rect behind display text
-            textBackgroundPaint.getTextBounds(drawableText, 0, drawableText.length, bounds)
-            val textWidth = bounds.width()
-            val textHeight = bounds.height()
-            canvas.drawRect(
-                left,
-                top,
-                left + textWidth + Companion.BOUNDING_RECT_TEXT_PADDING,
-                top + textHeight + Companion.BOUNDING_RECT_TEXT_PADDING,
-                textBackgroundPaint
-            )
-
-            // Draw text for detected object
-            canvas.drawText(drawableText, left, top + bounds.height(), textPaint)
+            // Draw arrow-like corners for the first and last detected boxes
+            if (index == 0) {
+                drawTopLeftArrow(canvas, left, top)
+                drawTopRightArrow(canvas, right, top)
+            }
+            if (index == results.size - 1) {
+                drawBottomRightArrow(canvas, right, bottom)
+                drawBottomLeftArrow(canvas, left, bottom)
+            }
         }
     }
 
@@ -99,6 +91,51 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
         // the size that the captured images will be displayed.
         scaleFactor = max(width * 1f / imageWidth, height * 1f / imageHeight)
     }
+
+    //TOP : Right
+    private fun drawTopRightArrow(canvas: Canvas, right: Float, top: Float) {
+        val offset = 80f  // Increased offset distance
+        val path = Path()
+        path.moveTo(right + offset, top - offset)
+        path.lineTo(right - 80 + offset, top - offset)
+        path.lineTo(right + offset, top + 80 - offset)
+        path.close()
+        canvas.drawPath(path, textBackgroundPaint)
+    }
+
+    //TOP : Left
+    private fun drawTopLeftArrow(canvas: Canvas, left: Float, top: Float) {
+        val offset = 80f  // Increased offset distance
+        val path = Path()
+        path.moveTo(left - offset, top - offset)
+        path.lineTo(left + 80 - offset, top - offset)
+        path.lineTo(left - offset, top + 80 - offset)
+        path.close()
+        canvas.drawPath(path, textBackgroundPaint)
+    }
+
+    //BOTTOM : Right
+    private fun drawBottomRightArrow(canvas: Canvas, right: Float, bottom: Float) {
+        val offset = 60f  // Increased offset distance
+        val path = Path()
+        path.moveTo(right + offset, bottom + offset)
+        path.lineTo(right - 80 + offset, bottom + offset)
+        path.lineTo(right + offset, bottom - 80 + offset)
+        path.close()
+        canvas.drawPath(path, textBackgroundPaint)
+    }
+
+    //BOTTOM : Left
+    private fun drawBottomLeftArrow(canvas: Canvas, left: Float, bottom: Float) {
+        val offset = 60f  // Increased offset distance
+        val path = Path()
+        path.moveTo(left - offset, bottom + offset)
+        path.lineTo(left + 80 - offset, bottom + offset)
+        path.lineTo(left - offset, bottom - 80 + offset)
+        path.close()
+        canvas.drawPath(path, textBackgroundPaint)
+    }
+
 
     companion object {
         private const val BOUNDING_RECT_TEXT_PADDING = 8
