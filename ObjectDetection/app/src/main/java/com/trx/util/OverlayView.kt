@@ -32,8 +32,8 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
 
     private fun initPaints() {
         arrowColor.color = Color.RED
-        arrowColor.style = Paint.Style.FILL
-        arrowColor.textSize = 50f
+        arrowColor.style = Paint.Style.STROKE
+        arrowColor.strokeWidth = 12f
 
         //If we want to make BOX
         boxPaint.color = ContextCompat.getColor(context!!, R.color.bounding_box_color)
@@ -53,7 +53,7 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
             val right = boundingBox.right * scaleFactor
 
             // Draw bounding box around detected objects
-            val drawableRect = RectF(left, top, right, bottom)
+            //val drawableRect = RectF(left, top, right, bottom)
             //canvas.drawRect(drawableRect, boxPaint)
 
             val boxWidth = calculateDistance(left, right)
@@ -67,7 +67,6 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
             } else {
                 arrowColor.color = Color.RED
             }
-
             // Draw arrow-like corners for the first and last detected boxes
             if (index == 0) {
                 drawTopLeftArrow(canvas, left, top)
@@ -108,24 +107,24 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
 
     //TOP : Right
     private fun drawTopRightArrow(canvas: Canvas, right: Float, top: Float) {
-        val offset = 80f  // Increased offset distance
+        val offset = 70f  // Increased offset distance
         val path = Path().apply {
             moveTo(right + offset, top - offset)
             lineTo(right - 80 + offset, top - offset)
-            lineTo(right + offset, top + 80 - offset)
-            close()
+            moveTo(right + offset, top - offset) // Move back to start to form an L shape
+            lineTo(right + offset, top + 80 - offset) // Draw vertical line
         }
         canvas.drawPath(path, arrowColor)
     }
 
     //TOP : Left
     private fun drawTopLeftArrow(canvas: Canvas, left: Float, top: Float) {
-        val offset = 80f  // Increased offset distance
+        val offset = 70f  // Increased offset distance
         val path = Path().apply {
             moveTo(left - offset, top - offset)
             lineTo(left + 80 - offset, top - offset)
-            lineTo(left - offset, top + 80 - offset)
-            close()
+            moveTo(left - offset, top - offset) // Move back to start to form an L shape
+            lineTo(left - offset, top + 80 - offset) // Draw vertical line
         }
         canvas.drawPath(path, arrowColor)
     }
@@ -136,8 +135,8 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
         val path = Path().apply {
             moveTo(right + offset, bottom + offset)
             lineTo(right - 80 + offset, bottom + offset)
-            lineTo(right + offset, bottom - 80 + offset)
-            close()
+            moveTo(right + offset, bottom + offset) // Move back to start to form an L shape
+            lineTo(right + offset, bottom - 80 + offset) // Draw vertical line
         }
         canvas.drawPath(path, arrowColor)
     }
@@ -148,8 +147,8 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
         val path = Path().apply {
             moveTo(left - offset, bottom + offset)
             lineTo(left + 80 - offset, bottom + offset)
-            lineTo(left - offset, bottom - 80 + offset)
-            close()
+            moveTo(left - offset, bottom + offset) // Move back to start to form an L shape
+            lineTo(left - offset, bottom - 80 + offset) // Draw vertical line
         }
         canvas.drawPath(path, arrowColor)
     }
