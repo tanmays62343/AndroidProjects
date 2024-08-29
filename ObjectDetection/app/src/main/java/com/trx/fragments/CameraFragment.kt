@@ -89,7 +89,7 @@ class CameraFragment : Fragment(), ObjectDetectorHelper.DetectorListener {
 
     // Initialize CameraX, and prepare to bind the camera use cases
     private fun setUpCamera() {
-        val cameraProviderFuture = ProcessCameraProvider.getInstance(requireContext())
+        /*val cameraProviderFuture = ProcessCameraProvider.getInstance(requireContext())
         cameraProviderFuture.addListener(
             {
                 try {
@@ -103,7 +103,7 @@ class CameraFragment : Fragment(), ObjectDetectorHelper.DetectorListener {
                 }
             },
             ContextCompat.getMainExecutor(requireContext())
-        )
+        )*/
     }
 
     // Binding all the features to camera

@@ -81,4 +81,10 @@ dependencies {
     implementation (libs.tensorflow.lite.gpu.delegate.plugin)
     implementation (libs.tensorflow.lite.gpu)
 
+    //For Encryption and Decryption
+    implementation (libs.androidxSecurityCrypto)
+
+    //For Intercom Chat
+    implementation(libs.intercomSdk)
+
 }
