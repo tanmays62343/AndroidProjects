@@ -59,4 +59,7 @@ dependencies {
     // ML Kit Barcode Scanning
     implementation(libs.barcode.scanning)
 
+    //Zxing barcode scanning
+    implementation (libs.zxing.android.embedded)
+
 }

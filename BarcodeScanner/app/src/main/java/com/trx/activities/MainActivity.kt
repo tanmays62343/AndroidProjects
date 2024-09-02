@@ -228,8 +228,17 @@ class MainActivity : AppCompatActivity() {
         val bmp = bitmap.copy(Bitmap.Config.ARGB_8888, true)
         val canvas = Canvas(bmp)
         val paint = Paint()
-        val colorMatrix = ColorMatrix()
-        colorMatrix.setSaturation(1.5f) // Increase saturation for better contrast
+        val colorMatrix = ColorMatrix().apply {
+            setSaturation(1.5f)
+            val contrast = 1.2f
+            val brightness = 10f
+            set(floatArrayOf(
+                contrast, 0f, 0f, 0f, brightness,
+                0f, contrast, 0f, 0f, brightness,
+                0f, 0f, contrast, 0f, brightness,
+                0f, 0f, 0f, 1f, 0f
+            ))
+        }
         val colorFilter = ColorMatrixColorFilter(colorMatrix)
         paint.colorFilter = colorFilter
         canvas.drawBitmap(bmp, 0f, 0f, paint)
